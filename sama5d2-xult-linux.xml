@@ -1,0 +1,30 @@
+<manifest>
+  <remote
+      fetch="git://github.com/linux4sam/"
+      name="linux4sam"
+      review="null" />
+  <default
+      remote="linux4sam"
+      revision="refs/heads/master" />
+  <!-- Projects -->
+  <project
+      name="at91bootstrap.git"
+      path="at91bootstrap"
+      remote="linux4sam"
+      revision="" />
+  <project
+      name="u-boot-at91.git"
+      path="u-boot-at91"
+      remote="linux4sam"
+      revision="" />
+  <project
+      name="linux-at91.git"
+      path="linux-at91"
+      remote="linux4sam"
+      revision="" />
+  <project
+      name="dt-overlay-at91.git"
+      path="dt-overlay-at91"
+      remote="linux4sam"
+      revision="" />
+</manifest>
