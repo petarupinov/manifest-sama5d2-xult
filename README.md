@@ -1,16 +1,21 @@
-Linux4SAM: sync repos via ssh or https
+##### Linux4SAM: sync repos, chackout branches and build
 
-Repos:
- 1. bootstrap - secondary bootloader
- 2. u-boot
- 3. kernel
- 4. device tree overlays (dto) and flattened image tree (fit)
+Install build tools:
+
+sudo add-apt-repository ppa:team-gcc-arm-embedded/ppa
+
+sudo apt-get update
+
+sudo apt-get install gcc-arm-embedded
 
 
-mkdir linux4sam && cd linux4sam
 
-repo init -u git://github.com/petarupinov/manifest-sama5d2-xult.git -m sama5d2-xult-linux.xml
+Clone repo:
 
-repo init -u https://github.com/petarupinov/manifest-sama5d2-xult.git -m sama5d2-xult-linux.xml
+git clone https://github.com/petarupinov/manifest-sama5d2-xult.git
 
-repo sync
+
+
+Run script:
+
+./sama5d2-xplained-ultra-linux-release.sh
