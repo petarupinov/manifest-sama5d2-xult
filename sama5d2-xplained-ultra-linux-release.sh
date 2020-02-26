@@ -8,7 +8,7 @@ repo init -u https://github.com/petarupinov/manifest-sama5d2-xult.git -m sama5d2
 repo sync -j4
 # 2. Bootstrap - secondary bootloader
 cd at91bootstrap/
-git checkout remotes/origin/at91bootstrap-3.x -b base
+git checkout remotes/linux4sam/at91bootstrap-3.x -b base
 git checkout -b dev
 git reset --hard v3.9.0
 make clean && make mrproper && make ARCH=arm CROSS_COMPILE=arm-none-eabi- distclean
@@ -16,7 +16,7 @@ make ARCH=arm CROSS_COMPILE=arm-none-eabi- sama5d2_xplaineddf_uboot_defconfig
 make ARCH=arm CROSS_COMPILE=arm-none-eabi-
 # 3. U-Boot - BOOTLOADER
 cd ../u-boot-at91/
-git checkout remotes/origin/u-boot-2019.04-at91 -b base
+git checkout remotes/linux4sam/u-boot-2019.04-at91 -b base
 git checkout -b dev
 git reset --hard linux4sam_6.2
 make clean && make mrproper && make ARCH=arm CROSS_COMPILE=arm-none-eabi- distclean
@@ -26,7 +26,7 @@ cp ../u-boot-env.txt .
 ./tools/mkenvimage -s 0x2000 -o u-boot-env.bin u-boot-env.txt
 # 4. Kernel
 cd ../ && cd linux-at91/
-git checkout remotes/origin/linux-4.19-at91 -b base
+git checkout remotes/linux4sam/linux-4.19-at91 -b base
 git checkout -b dev
 git reset --hard linux4sam_6.2
 make clean && make mrproper && make ARCH=arm CROSS_COMPILE=arm-none-eabi- distclean
