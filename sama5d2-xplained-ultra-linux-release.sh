@@ -22,7 +22,8 @@ git reset --hard linux4sam_6.2
 make clean && make mrproper && make ARCH=arm CROSS_COMPILE=arm-none-eabi- distclean
 make ARCH=arm CROSS_COMPILE=arm-none-eabi- sama5d2_xplained_spiflash_defconfig
 make ARCH=arm CROSS_COMPILE=arm-none-eabi-
-#./tools/mkenvimage -s 0x2000 -o u-boot-env.bin u-boot-env.txt
+cp ../u-boot-env.txt .
+./tools/mkenvimage -s 0x2000 -o u-boot-env.bin u-boot-env.txt
 # 4. Kernel
 cd ../ && cd linux-at91/
 git checkout remotes/origin/linux-4.19-at91 -b base

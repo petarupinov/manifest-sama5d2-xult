@@ -1,0 +1,7 @@
+baudrate=115200
+bootargs=console=ttyS0,115200 root=/dev/mmcblk0p1 rw rootfstype=ext4 rootwait atmel.pm_modes=standby,ulp1
+bootcmd=ext4load mmc 0 0x24000000 boot/sama5d2_xplained.itb; bootm 0x24000000#kernel_dtb
+bootdelay=1
+stderr=serial
+stdin=serial
+stdout=serial
